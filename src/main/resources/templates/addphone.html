@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>New Phone</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" /> 
+    
+</head>
+<body>
+	<h1>Insert new phone information</h1>
+	<div>
+	<!-- Uuden puhelimen lisäys sivusto -->
+	<form th:object="${phone}" th:action="@{save}" action="#" method="post">
+
+		  	<div>
+		  	<label>Make: </label>
+			<input type="text" class="form-control" th:field="*{make}" />
+			</div>
+			<div>
+		  	<label>Model: </label>
+		  	<input type="text" class="form-control" th:field="*{model}" />
+			</div>
+			<div>
+		  	<label>Capacity: </label>
+			<input type="text" class="form-control" th:field="*{capacity}" />
+			</div>
+			<div>
+		  	<label>Year: </label>
+			<input type="text" class="form-control" th:field="*{makeYear}" />
+			</div>
+			<div>		
+		  	<label>Price: </label>
+			<input type="text" class="form-control" th:field="*{price}" />
+			</div>
+			<br>
+		  	<label>Condition: </label>
+			 <select id="phoneconditions"  th:field="*{phonecondition}">
+       			<option th:each="phonecondition: ${phoneconditions}" th:value="${phonecondition.phoneconditionid}" th:text="${phonecondition.name}"></option>
+    		</select>	
+			<br><br>
+			<input type="submit" class="btn btn-primary" value="Save"></input>
+		</form>
+	
+	</div>
+
+ 	
+</body>
+</html>
