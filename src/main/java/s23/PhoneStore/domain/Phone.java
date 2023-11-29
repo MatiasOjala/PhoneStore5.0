@@ -1,12 +1,12 @@
 package s23.PhoneStore.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 
 @Entity
@@ -23,7 +23,7 @@ public class Phone {
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="phoneconditionid")
-	private PhoneCondition phonesCondition;
+	private PhoneCondition phonecondition;
 	
 	
 	public Phone() {
@@ -32,7 +32,7 @@ public class Phone {
 	}
 
 
-	public Phone(Long id, String make, String model, String capacity, int makeYear, double price, PhoneCondition phonesCondition) {
+	public Phone(Long id, String make, String model, String capacity, int makeYear, double price, PhoneCondition phonecondition) {
 		super();
 		this.id = id;
 		this.make = make;
@@ -40,7 +40,7 @@ public class Phone {
 		this.capacity = capacity;
 		this.makeYear = makeYear;
 		this.price = price;
-		this.phonesCondition = phonesCondition;
+		this.phonecondition = phonecondition;
 	}
 
 
@@ -104,20 +104,20 @@ public class Phone {
 	}
 
 
-	public PhoneCondition getPhoneCondition() {
-		return phonesCondition;
+	public PhoneCondition getPhonecondition() {
+		return phonecondition;
 	}
 
 
-	public void setPhoneCondition(PhoneCondition phonesCondition) {
-		this.phonesCondition = phonesCondition;
+	public void setPhonecondition(PhoneCondition phonecondition) {
+		this.phonecondition = phonecondition;
 	}
 
 
 	@Override
 	public String toString() {
 		return "Phone [id=" + id + ", make=" + make + ", model=" + model + ", capacity=" + capacity + ", makeYear="
-				+ makeYear + ", price=" + price + ", phonesCondition=" + phonesCondition + "]";
+				+ makeYear + ", price=" + price + ", phonecondition=" + phonecondition + "]";
 	}
 	
 	

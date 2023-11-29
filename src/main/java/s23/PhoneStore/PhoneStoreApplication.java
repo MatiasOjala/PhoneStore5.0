@@ -17,6 +17,7 @@ import s23.PhoneStore.domain.PhoneRepository;
 
 //Pääohjelma
 
+
 @SpringBootApplication
 public class PhoneStoreApplication {
 private static final Logger Log = LoggerFactory.getLogger(PhoneStoreApplication.class);
@@ -40,9 +41,9 @@ private static final Logger Log = LoggerFactory.getLogger(PhoneStoreApplication.
 			// Määritetään käyttäjät.
 			Log.info("luodaan kaksi käyttäjää sovellukselle");
 			auRepository.save(new ApplicationUser("Matti", "Meikalainen", "USER", "user", 
-					"$2a$10$qTuhvwviu0XCo5UWYECE5eHzFuXV6AfndNOPjF1JDIJOs7Mz7pDzG"));
+					"$2a$10$1v3c7QUdKP.1xf.KN/tp8uAvrLJNKddh9lHQV5TAeh4SIr2Mx0egq"));
 			auRepository.save(new ApplicationUser("Meikalainen", "Matti", "ADMIN", "admin", 
-					"$2a$10$ng6O4VyeXpWG12/WkA7AI.d.AsINXpIgJLd3PG1k9VIeR0OQbsB6G"));
+					"$2a$10$1v3c7QUdKP.1xf.KN/tp8uAvrLJNKddh9lHQV5TAeh4SIr2Mx0egq"));
 			
 			// Määritetään hieman kunto tasoa.
 			Log.info("save a few coonditons for phones");
